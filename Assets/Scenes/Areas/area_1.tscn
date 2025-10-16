@@ -9,3 +9,21 @@ tile_map_data = PackedByteArray("AAAQAAEAAAAHABAAAAAQAAAAAAAHABAAAAAQAP//AAAHABA
 
 [node name="Foreground_Tiles" parent="TileMaps" index="3"]
 tile_map_data = PackedByteArray("AAADAP//AAAOAAEAAAAPAPz/AAAOAAEAAAAOAP//AAAPAA0AAAAXAP//AAAOAAEAAAA=")
+
+[node name="Red_Gem" parent="Collectibles" index="0"]
+position = Vector2(416, -64)
+isReversed = false
+
+[node name="Red_Gem2" parent="Collectibles" index="1"]
+position = Vector2(800, -64)
+
+[node name="Red_Gem3" parent="Collectibles" index="2"]
+position = Vector2(640, -288)
+
+[node name="Red_Gem4" parent="Collectibles" index="3"]
+position = Vector2(960, -288)
+isReversed = true
+
+[node name="Red_Gem5" parent="Collectibles" index="4"]
+position = Vector2(1184, -64)
+isReversed = false

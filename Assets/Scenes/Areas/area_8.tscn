@@ -36,3 +36,20 @@ curve = SubResource("Curve2D_wp6pb")
 position = Vector2(448, -608)
 curve = SubResource("Curve2D_816hg")
 path_time = 3.0
+
+[node name="Red_Gem" parent="Collectibles" index="0"]
+position = Vector2(256, -288)
+
+[node name="Red_Gem2" parent="Collectibles" index="1"]
+position = Vector2(1120, -128)
+
+[node name="Red_Gem3" parent="Collectibles" index="2"]
+position = Vector2(256, -672)
+
+[node name="Red_Gem4" parent="Collectibles" index="3"]
+position = Vector2(1088, -672)
+isReversed = true
+
+[node name="Red_Gem5" parent="Collectibles" index="4"]
+position = Vector2(1280, -288)
+isReversed = false

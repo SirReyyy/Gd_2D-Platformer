@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciqwljlbg5osr"]
+
+[ext_resource type="Script" uid="uid://usq8xlrkrsor" path="res://Assets/Scripts/area_elimination.gd" id="1_5m4yy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qupve"]
+size = Vector2(2048, 64)
+
+[node name="Area_Elimination" type="Area2D"]
+script = ExtResource("1_5m4yy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qupve")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

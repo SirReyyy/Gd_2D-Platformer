@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://cqmx2nlebektc"]
+[gd_scene load_steps=11 format=4 uid="uid://cqmx2nlebektc"]
 
 [ext_resource type="Texture2D" uid="uid://crm80fq7ah8t1" path="res://Imports/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-tiles-default.png" id="1_4hgrk"]
 [ext_resource type="Texture2D" uid="uid://b88kimv1crmjk" path="res://Imports/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-backgrounds-default.png" id="1_xx488"]
+[ext_resource type="PackedScene" uid="uid://ibde87m0kxwr" path="res://Assets/Scenes/red_gem.tscn" id="3_8vbn7"]
 [ext_resource type="PackedScene" uid="uid://r3w061cdlm8t" path="res://Assets/Scenes/player.tscn" id="3_fwmpi"]
 [ext_resource type="PackedScene" uid="uid://ck2eustso5m8f" path="res://Assets/Scenes/area_exit.tscn" id="4_81yul"]
+[ext_resource type="PackedScene" uid="uid://ciqwljlbg5osr" path="res://Assets/Scenes/eliminate_player.tscn" id="6_pd61b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fwmpi"]
 texture = ExtResource("1_xx488")
@@ -8186,6 +8188,26 @@ tile_set = SubResource("TileSet_8wi1m")
 
 [node name="Moving_Platforms" type="Node2D" parent="."]
 
+[node name="Collectibles" type="Node2D" parent="."]
+
+[node name="Red_Gem" parent="Collectibles" instance=ExtResource("3_8vbn7")]
+position = Vector2(320, -32)
+isReversed = true
+
+[node name="Red_Gem2" parent="Collectibles" instance=ExtResource("3_8vbn7")]
+position = Vector2(416, -32)
+
+[node name="Red_Gem3" parent="Collectibles" instance=ExtResource("3_8vbn7")]
+position = Vector2(512, -32)
+isReversed = true
+
+[node name="Red_Gem4" parent="Collectibles" instance=ExtResource("3_8vbn7")]
+position = Vector2(608, -32)
+
+[node name="Red_Gem5" parent="Collectibles" instance=ExtResource("3_8vbn7")]
+position = Vector2(704, -32)
+isReversed = true
+
 [node name="Player" parent="." instance=ExtResource("3_fwmpi")]
 
 [node name="AreaExit" parent="." instance=ExtResource("4_81yul")]
@@ -8194,3 +8216,6 @@ position = Vector2(1568, -32)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(768, -416)
 zoom = Vector2(0.6, 0.6)
+
+[node name="Area_Elimination" parent="." instance=ExtResource("6_pd61b")]
+position = Vector2(768, 192)

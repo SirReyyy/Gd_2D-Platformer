@@ -13,5 +13,23 @@ tile_map_data = PackedByteArray("AAD8//D/AAAQABAAAAD8//H/AAAQABAAAAD8//L/AAAQABA
 [node name="Foreground_Tiles" parent="TileMaps" index="3"]
 tile_map_data = PackedByteArray("AAAIAPf/AAAOAAEAAAAWAP//AAAOAAEAAAATAP7/AAAPAA0AAAAFAPf/AAAPAA0AAAAGAP3/AAAHAAsAAAAGAPr/AAAHAAsAAAAFAP7/AAAIAAAAAAAGAP7/AAAIAAAAAAAHAP7/AAAIAAAAAAAGAP//AAAIAAAAAAAHAP//AAAIAAAAAAAHAAAAAAAIAAAAAAAHAAEAAAAIAAAAAAAGAAEAAAAIAAAAAAAGAAAAAAAIAAAAAAAEAP7/AAAHABEAAAAVAP7/AAAHABEAAAAWAP7/AAAIAAAAAAAXAP7/AAAIAAAAAAAXAP//AAAIAAAAAAAXAP3/AAAHAAsAAAAWAPv/AAAHAAsAAAA=")
 
-[node name="AreaExit" parent="." index="3"]
+[node name="Red_Gem" parent="Collectibles" index="0"]
+position = Vector2(416, -224)
+isReversed = false
+
+[node name="Red_Gem2" parent="Collectibles" index="1"]
+position = Vector2(416, -416)
+
+[node name="Red_Gem3" parent="Collectibles" index="2"]
+position = Vector2(416, -608)
+isReversed = false
+
+[node name="Red_Gem4" parent="Collectibles" index="3"]
+position = Vector2(1248, -352)
+isReversed = true
+
+[node name="Red_Gem5" parent="Collectibles" index="4"]
+position = Vector2(1248, -160)
+
+[node name="AreaExit" parent="." index="4"]
 position = Vector2(1504, -480)

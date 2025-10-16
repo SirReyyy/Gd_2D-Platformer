@@ -24,5 +24,25 @@ scale = Vector2(1.08333, 1)
 curve = SubResource("Curve2D_e5ili")
 path_time = 3.0
 
-[node name="AreaExit" parent="." index="3"]
+[node name="Red_Gem" parent="Collectibles" index="0"]
+position = Vector2(224, -96)
+isReversed = false
+
+[node name="Red_Gem2" parent="Collectibles" index="1"]
+position = Vector2(480, -224)
+isReversed = true
+
+[node name="Red_Gem3" parent="Collectibles" index="2"]
+position = Vector2(768, -352)
+isReversed = false
+
+[node name="Red_Gem4" parent="Collectibles" index="3"]
+position = Vector2(1056, -224)
+isReversed = true
+
+[node name="Red_Gem5" parent="Collectibles" index="4"]
+position = Vector2(1568, -96)
+isReversed = false
+
+[node name="AreaExit" parent="." index="4"]
 position = Vector2(1504, -416)

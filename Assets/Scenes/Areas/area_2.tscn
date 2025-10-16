@@ -7,5 +7,20 @@
 [node name="Foreground_Tiles" parent="TileMaps" index="3"]
 tile_map_data = PackedByteArray("AAAWAP//AAAOAAEAAAAGAP//AAAOAAEAAAAMAP//AAAPAA0AAAD/////AAAPAA0AAAAYAP//AAARAAAAAAAUAP3/AAARAAAAAAAUAP7/AAARAAAAAAAUAP//AAARAAAAAAAOAPz/AAARAAAAAAAPAPz/AAARAAAAAAAPAP3/AAARAAAAAAAOAP3/AAARAAAAAAAPAP7/AAARAAAAAAAOAP7/AAARAAAAAAAOAP//AAARAAAAAAAPAP//AAARAAAAAAAJAP7/AAARAAAAAAAJAP//AAARAAAAAAAEAP//AAARAAAAAAA=")
 
-[node name="AreaExit" parent="." index="3"]
+[node name="Red_Gem" parent="Collectibles" index="0"]
+position = Vector2(288, -160)
+
+[node name="Red_Gem2" parent="Collectibles" index="1"]
+position = Vector2(608, -224)
+
+[node name="Red_Gem3" parent="Collectibles" index="2"]
+position = Vector2(800, -416)
+
+[node name="Red_Gem4" parent="Collectibles" index="3"]
+position = Vector2(1120, -416)
+
+[node name="Red_Gem5" parent="Collectibles" index="4"]
+position = Vector2(1440, -352)
+
+[node name="AreaExit" parent="." index="4"]
 position = Vector2(1568, -96)
