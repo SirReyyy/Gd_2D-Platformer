@@ -12,3 +12,6 @@ tile_map_data = PackedByteArray("AAD8//D/AAAQABAAAAD8//H/AAAQABAAAAD8//L/AAAQABA
 
 [node name="Foreground_Tiles" parent="TileMaps" index="3"]
 tile_map_data = PackedByteArray("AAAWAP//AAAHAA0AAAAEAP//AAAPAA0AAAAYAP3/AAAOAAEAAAANAP//AAARAAAAAAAKAP//AAARAAAAAAAKAP7/AAARAAAAAAA=")
+
+[node name="AreaExit" parent="." index="3"]
+position = Vector2(1504, -160)

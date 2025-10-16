@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=4 uid="uid://bm8db0glnoknk"]
+
+[ext_resource type="PackedScene" uid="uid://cqmx2nlebektc" path="res://Assets/Scenes/Areas/Others/area_template.tscn" id="1_hf6vo"]
+
+[node name="Area_02" instance=ExtResource("1_hf6vo")]
+
+[node name="Foreground_Tiles" parent="TileMaps" index="3"]
+tile_map_data = PackedByteArray("AAAWAP//AAAOAAEAAAAGAP//AAAOAAEAAAAMAP//AAAPAA0AAAD/////AAAPAA0AAAAYAP//AAARAAAAAAAUAP3/AAARAAAAAAAUAP7/AAARAAAAAAAUAP//AAARAAAAAAAOAPz/AAARAAAAAAAPAPz/AAARAAAAAAAPAP3/AAARAAAAAAAOAP3/AAARAAAAAAAPAP7/AAARAAAAAAAOAP7/AAARAAAAAAAOAP//AAARAAAAAAAPAP//AAARAAAAAAAJAP7/AAARAAAAAAAJAP//AAARAAAAAAAEAP//AAARAAAAAAA=")
+
+[node name="AreaExit" parent="." index="3"]
+position = Vector2(1568, -96)
