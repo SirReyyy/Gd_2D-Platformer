@@ -16,6 +16,8 @@ func _process(delta):
 	# player walk animation
 	if abs(player_controller.velocity.x) > 0.0:
 		animation_player.play("walk_animation")
+	elif player_controller.isDucked == true:
+		animation_player.play("duck_animation")
 	else:
 		animation_player.play("idle_animation")
 		

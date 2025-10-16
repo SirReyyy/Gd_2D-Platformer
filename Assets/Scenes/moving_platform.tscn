@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmrogg22hhsql"]
+
+[ext_resource type="Texture2D" uid="uid://cw6w050y40yd6" path="res://Imports/kenney_new-platformer-pack-1.0/Sprites/Tiles/Default/terrain_grass_horizontal_middle.png" id="1_4764i"]
+[ext_resource type="Script" uid="uid://ci04y60i4o0v0" path="res://Assets/Scripts/moving_platform.gd" id="1_kgs85"]
+[ext_resource type="Texture2D" uid="uid://dsllf5wrhmvxl" path="res://Imports/kenney_new-platformer-pack-1.0/Sprites/Tiles/Default/terrain_grass_horizontal_overhang_left.png" id="2_kgs85"]
+[ext_resource type="Texture2D" uid="uid://c0kexh2sgipd5" path="res://Imports/kenney_new-platformer-pack-1.0/Sprites/Tiles/Default/terrain_grass_horizontal_overhang_right.png" id="3_7on83"]
+
+[sub_resource type="Curve2D" id="Curve2D_s1svh"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -200)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4764i"]
+size = Vector2(186, 25)
+
+[node name="MovingPlatform" type="Path2D" node_paths=PackedStringArray("path_follow_2d")]
+curve = SubResource("Curve2D_s1svh")
+script = ExtResource("1_kgs85")
+path_follow_2d = NodePath("PathFollow2D")
+path_time = 2.0
+ease = 2
+transition = 4
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 512
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_4764i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="AnimatableBody2D/Sprite2D"]
+position = Vector2(-64, 0)
+texture = ExtResource("2_kgs85")
+
+[node name="Sprite2D3" type="Sprite2D" parent="AnimatableBody2D/Sprite2D"]
+position = Vector2(64, 0)
+texture = ExtResource("3_7on83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_4764i")
+one_way_collision = true
