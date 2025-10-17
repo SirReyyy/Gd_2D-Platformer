@@ -151,7 +151,7 @@ _data = {
 radius = 26.0
 height = 88.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 66048
 platform_on_leave = 2
 script = ExtResource("1_7dd06")
@@ -171,6 +171,7 @@ autoplay = "idle_animation"
 speed_scale = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerAnimator"]
+z_index = 10
 position = Vector2(0, -56)
 texture = ExtResource("1_6cd4h")
 region_enabled = true
