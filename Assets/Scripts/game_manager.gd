@@ -8,10 +8,12 @@ var red_gem_collectibles = 0
 
 var area_container = Node2D
 var player : PlayerController
+var hud : HUD
 
 func _ready():
 	area_container = get_tree().get_first_node_in_group("area_container")
 	player = get_tree().get_first_node_in_group("player")
+	hud = get_tree().get_first_node_in_group("HUD")
 	load_area(starting_area)
 
 
@@ -24,6 +26,8 @@ func next_area():
 func load_area(area_number):
 	# get new scene path
 	var full_path = area_path + "area_" + str(area_number) + ".tscn"
+	hud.update_area_label(area_number)
+	
 	var scene = load(full_path) as PackedScene
 	if !scene:
 		return
@@ -38,6 +42,7 @@ func load_area(area_number):
 	area_container.add_child(instance)
 	reset_red_gem()
 	
+	# move player
 	var player_start_position = get_tree().get_first_node_in_group("player_start_position") as Node2D
 	player.teleport_to_location(player_start_position.position)
 	
@@ -50,11 +55,16 @@ func reload_area():
 # increment when picked up
 func increment_red_gem():
 	red_gem_collectibles += 1
+	hud.update_redgem_count(red_gem_collectibles)
+	
 	if(red_gem_collectibles >= 5):
 		var exit = get_tree().get_first_node_in_group("area_exits") as AreaExit
 		exit.unlocked()
+		hud.update_exit_true()
 
 
 # reset collectible count
 func reset_red_gem():
 	red_gem_collectibles = 0
+	hud.update_redgem_count(red_gem_collectibles)
+	hud.update_exit_false()
