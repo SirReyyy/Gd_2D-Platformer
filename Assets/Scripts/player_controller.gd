@@ -2,8 +2,10 @@ extends CharacterBody2D
 class_name PlayerController
 
 
+
 @export var speed = 20.0
 @export var jump_power = 35.0
+@export var jump_sfx : AudioStreamPlayer2D
 
 var speed_multiplier = 20.0
 var jump_multiplier = -20.0
@@ -14,6 +16,7 @@ var isDucked = false
 func _input(event):
 	# handle jump mechanics
 	if event.is_action_pressed("jump") and is_on_floor():
+		jump_sfx.play()
 		velocity.y = jump_power * jump_multiplier
 		
 	# handle duck and jump down mechanics

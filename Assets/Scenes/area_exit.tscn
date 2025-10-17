@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck2eustso5m8f"]
+[gd_scene load_steps=9 format=3 uid="uid://ck2eustso5m8f"]
 
 [ext_resource type="Texture2D" uid="uid://crm80fq7ah8t1" path="res://Imports/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-tiles-default.png" id="1_cavjt"]
 [ext_resource type="Script" uid="uid://bgpg60nulk054" path="res://Assets/Scripts/area_exit.gd" id="1_ulc11"]
+[ext_resource type="AudioStream" uid="uid://dkyhrm1j62qg" path="res://Imports/kenney_new-platformer-pack-1.0/Sounds/sfx_magic.ogg" id="3_8hnmh"]
 
 [sub_resource type="Animation" id="Animation_cavjt"]
 length = 0.001
@@ -62,10 +63,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulc11"]
 size = Vector2(64, 64)
 
-[node name="AreaExit" type="Area2D" node_paths=PackedStringArray("animation_player") groups=["area_exits"]]
+[node name="AreaExit" type="Area2D" node_paths=PackedStringArray("animation_player", "sfx_capture") groups=["area_exits"]]
 collision_layer = 65536
 script = ExtResource("1_ulc11")
 animation_player = NodePath("ExitAnimator/AnimationPlayer")
+sfx_capture = NodePath("AudioStreamPlayer2D")
 
 [node name="ExitAnimator" type="Node2D" parent="."]
 
@@ -79,6 +81,10 @@ speed_scale = 2.0
 texture = ExtResource("1_cavjt")
 region_enabled = true
 region_rect = Rect2(896, 512, 64, 64)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8hnmh")
+volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ulc11")
