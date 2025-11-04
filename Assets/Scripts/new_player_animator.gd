@@ -1,4 +1,5 @@
 extends Node2D
+class_name NewPlayerAnim
 
 # export variables
 @export var player_controller : PlayerController
@@ -9,8 +10,14 @@ var player_index = 0
 var player_color = "beige"
 
 
+func _ready():
+	random_player_color()
+	
+func random_player_color():
+	player_index = randi_range(0,4)
+
 # process function
-func _process(delta):
+func _process(_delta):
 	#get player color
 	get_player_color(player_index)
 	

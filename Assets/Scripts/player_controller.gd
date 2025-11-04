@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name PlayerController
 
 
-
+#@export var PlayerAnimator = NewPlayer
 @export var speed = 20.0
 @export var jump_power = 35.0
 @export var jump_sfx : AudioStreamPlayer2D
@@ -43,3 +43,4 @@ func _physics_process(delta: float) -> void:
 
 func teleport_to_location(new_location):
 	position = new_location
+	#PlayerAnimator.random_player_controller()

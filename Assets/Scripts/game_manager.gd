@@ -8,30 +8,34 @@ var gem_collectibles = 5
 
 var area_container = Node2D
 var player : PlayerController
+var playeranim : NewPlayerAnim
 var hud : HUD
+
 
 func _ready():
 	area_container = get_tree().get_first_node_in_group("area_container")
 	player = get_tree().get_first_node_in_group("player")
 	hud = get_tree().get_first_node_in_group("HUD")
+	playeranim = get_tree().get_first_node_in_group("anim")
 	load_area(starting_area)
 
 
 # load next area
 func next_area():
 	if current_area <= 10:
-		current_area += 10
+		current_area += 1
 		load_area(current_area)
 	elif current_area > 10:
 		current_area += 10
 		load_area(current_area)
 	if current_area > 50:
-		current_area = 1
+		current_area = 51
 		load_area(current_area)
 
 
 # load area
 func load_area(area_number):
+	playeranim.random_player_color()
 	# get new scene path
 	var full_path = area_path + "area_" + str(area_number) + ".tscn"
 	hud.update_area_label(area_number)

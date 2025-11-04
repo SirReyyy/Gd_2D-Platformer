@@ -8277,3 +8277,22 @@ label_settings = ExtResource("7_n0fpb")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Credits_Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1408.0
+offset_top = 64.0
+offset_right = 1647.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Assets from kenney.nl"
+label_settings = ExtResource("7_n0fpb")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
