@@ -15,7 +15,7 @@ func _ready():
 # pick up logic
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerController:
-		GameManager.increment_red_gem()
+		GameManager.increment_gem()
 		sprite.visible = false
 		
 		sfx_pickup.play()

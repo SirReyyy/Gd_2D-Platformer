@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ib8qs78o388h" path="res://Assets/Scripts/hud.gd" id="1_vwsl1"]
 [ext_resource type="LabelSettings" uid="uid://ctgvdatbgmx41" path="res://Assets/Fonts/label_settings_1.tres" id="2_qa8gy"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("area_label", "red_gem_count", "exit_label") groups=["HUD"]]
+[node name="HUD" type="Control" node_paths=PackedStringArray("area_label", "gem_count", "exit_label") groups=["HUD"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vwsl1")
 area_label = NodePath("Area_Label")
-red_gem_count = NodePath("Red_Gem/Red_Gem_Count")
+gem_count = NodePath("Red_Gem/Gem_Count")
 exit_label = NodePath("Exit_Label")
 
 [node name="Red_Gem" type="TextureRect" parent="."]
@@ -26,7 +26,7 @@ texture = ExtResource("1_4mbs2")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Red_Gem_Count" type="Label" parent="Red_Gem"]
+[node name="Gem_Count" type="Label" parent="Red_Gem"]
 layout_mode = 1
 offset_left = 48.0
 offset_top = 16.0

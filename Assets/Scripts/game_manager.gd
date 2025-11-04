@@ -4,7 +4,7 @@ extends Node
 var area_path = "res://Assets/Scenes/Areas/"
 var starting_area = 1
 var current_area = 1
-var red_gem_collectibles = 5
+var gem_collectibles = 5
 
 var area_container = Node2D
 var player : PlayerController
@@ -46,7 +46,7 @@ func load_area(area_number):
 	# setup new scene
 	var instance = scene.instantiate()
 	area_container.add_child(instance)
-	reset_red_gem()
+	reset_gem()
 	
 	# move player
 	var player_start_position = get_tree().get_first_node_in_group("player_start_position") as Node2D
@@ -59,18 +59,19 @@ func reload_area():
 	#setup_area()
 
 # increment when picked up
-func increment_red_gem():
-	red_gem_collectibles -= 1
-	hud.update_redgem_count(red_gem_collectibles)
+func increment_gem():
+	gem_collectibles -= 1
+	gem_collectibles = max(gem_collectibles, 0)
+	hud.update_gem_count(gem_collectibles)
 	
-	if(red_gem_collectibles <= 0):
+	if(gem_collectibles <= 0):
 		var exit = get_tree().get_first_node_in_group("area_exits") as AreaExit
 		exit.unlocked()
 		hud.update_exit_true()
 
 
 # reset collectible count
-func reset_red_gem():
-	red_gem_collectibles = 5
-	hud.update_redgem_count(red_gem_collectibles)
+func reset_gem():
+	gem_collectibles = 5
+	hud.update_gem_count(gem_collectibles)
 	hud.update_exit_false()

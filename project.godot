@@ -13,7 +13,7 @@ config_version=5
 config/name="gd_2d-platformer"
 run/main_scene="uid://b7jd2s3mybiiu"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dekvy4ngq4obm"
 
 [autoload]
 
@@ -21,9 +21,8 @@ GameManager="*res://Assets/Scripts/game_manager.gd"
 
 [display]
 
-window/size/initial_position_type=0
+window/size/mode=2
 window/size/resizable=false
-window/stretch/aspect="keep_width"
 
 [input]
 

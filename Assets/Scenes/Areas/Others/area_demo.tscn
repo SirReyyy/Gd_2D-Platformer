@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crm80fq7ah8t1" path="res://Imports/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-tiles-default.png" id="1_sg6hr"]
 [ext_resource type="PackedScene" uid="uid://dmrogg22hhsql" path="res://Assets/Scenes/moving_platform.tscn" id="2_yvu61"]
-[ext_resource type="PackedScene" uid="uid://r3w061cdlm8t" path="res://Assets/Scenes/player.tscn" id="3_y1bth"]
+[ext_resource type="PackedScene" uid="uid://r3w061cdlm8t" path="res://Assets/Scenes/player_yellow.tscn" id="3_y1bth"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uyhe"]
 texture = ExtResource("1_sg6hr")
