@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://dsw51737yd3jk"]
 
 [ext_resource type="PackedScene" uid="uid://cqmx2nlebektc" path="res://Assets/Scenes/Areas/Others/area_template.tscn" id="1_64meg"]
-[ext_resource type="PackedScene" uid="uid://dmrogg22hhsql" path="res://Assets/Scenes/moving_platform.tscn" id="2_gp4ib"]
+[ext_resource type="PackedScene" uid="uid://dmrogg22hhsql" path="res://Assets/Scenes/Areas/Area Props/moving_platform.tscn" id="2_gp4ib"]
 
 [sub_resource type="Curve2D" id="Curve2D_gp4ib"]
 resource_local_to_scene = true

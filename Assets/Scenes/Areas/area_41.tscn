@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dauje53a1wu0j"]
+
+[ext_resource type="PackedScene" uid="uid://de0ktd1x1q0vi" path="res://Assets/Scenes/Areas/Others/area_template_5.tscn" id="1_el5gt"]
+
+[node name="Area_Template_41" instance=ExtResource("1_el5gt")]
+
+[node name="Background_Image" parent="TileMaps" index="0"]
+self_modulate = Color(0.588235, 0.588235, 0.588235, 1)

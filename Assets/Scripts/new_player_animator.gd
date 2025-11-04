@@ -5,7 +5,7 @@ extends Node2D
 @export var animation_player : AnimationPlayer
 @export var sprite : Sprite2D
 
-var player_index = 1
+var player_index = 0
 var player_color = "beige"
 
 

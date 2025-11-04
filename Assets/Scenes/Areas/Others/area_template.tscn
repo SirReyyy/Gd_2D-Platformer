@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://crm80fq7ah8t1" path="res://Imports/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-tiles-default.png" id="1_4hgrk"]
 [ext_resource type="Texture2D" uid="uid://b88kimv1crmjk" path="res://Imports/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-backgrounds-default.png" id="1_xx488"]
-[ext_resource type="PackedScene" uid="uid://ibde87m0kxwr" path="res://Assets/Scenes/red_gem.tscn" id="3_8vbn7"]
-[ext_resource type="PackedScene" uid="uid://ck2eustso5m8f" path="res://Assets/Scenes/area_exit.tscn" id="4_81yul"]
+[ext_resource type="PackedScene" uid="uid://ibde87m0kxwr" path="res://Assets/Scenes/Areas/Area Props/red_gem.tscn" id="3_8vbn7"]
+[ext_resource type="PackedScene" uid="uid://ck2eustso5m8f" path="res://Assets/Scenes/Areas/Area Props/red_area_exit.tscn" id="4_81yul"]
 [ext_resource type="AudioStream" uid="uid://dcpge12v1gt2" path="res://Imports/kids-game-gaming-background-music-295075.mp3" id="6_gfrb1"]
-[ext_resource type="PackedScene" uid="uid://ciqwljlbg5osr" path="res://Assets/Scenes/eliminate_player.tscn" id="6_pd61b"]
+[ext_resource type="PackedScene" uid="uid://ciqwljlbg5osr" path="res://Assets/Scenes/Areas/Area Props/eliminate_player.tscn" id="6_pd61b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pd61b"]
 texture = ExtResource("1_xx488")

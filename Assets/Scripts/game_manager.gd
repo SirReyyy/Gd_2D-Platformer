@@ -19,14 +19,16 @@ func _ready():
 
 # load next area
 func next_area():
-	current_area += 1
-	
-	# repeat to 1 after area 10
-	if current_area > 10:
-		current_area = 1
-		load_area(1)
-	else:
+	if current_area <= 10:
+		current_area += 10
 		load_area(current_area)
+	elif current_area > 10:
+		current_area += 10
+		load_area(current_area)
+	if current_area > 50:
+		current_area = 1
+		load_area(current_area)
+
 
 # load area
 func load_area(area_number):

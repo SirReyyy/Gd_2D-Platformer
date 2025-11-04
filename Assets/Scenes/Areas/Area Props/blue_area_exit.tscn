@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://1vmgv6vr4iu2"]
+
+[ext_resource type="Script" uid="uid://bgpg60nulk054" path="res://Assets/Scripts/area_exit.gd" id="1_d0sbg"]
+[ext_resource type="Texture2D" uid="uid://crm80fq7ah8t1" path="res://Imports/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-tiles-default.png" id="2_siyw4"]
+[ext_resource type="AudioStream" uid="uid://dkyhrm1j62qg" path="res://Imports/kenney_new-platformer-pack-1.0/Sounds/sfx_magic.ogg" id="3_lqnsr"]
+
+[sub_resource type="Animation" id="Animation_cavjt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(896, 832, 64, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_8hnmh"]
+resource_name = "locked_animation"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(896, 832, 64, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_ulc11"]
+resource_name = "idle_animation"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(896, 832, 64, 64), Rect2(896, 896, 64, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8hnmh"]
+_data = {
+&"RESET": SubResource("Animation_cavjt"),
+&"locked_animation": SubResource("Animation_8hnmh"),
+&"unlocked_animation": SubResource("Animation_ulc11")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulc11"]
+size = Vector2(64, 64)
+
+[node name="Blue_AreaExit" type="Area2D" node_paths=PackedStringArray("animation_player", "sfx_capture") groups=["area_exits"]]
+collision_layer = 65536
+script = ExtResource("1_d0sbg")
+animation_player = NodePath("ExitAnimator/AnimationPlayer")
+sfx_capture = NodePath("AudioStreamPlayer2D")
+
+[node name="ExitAnimator" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ExitAnimator"]
+libraries = {
+&"": SubResource("AnimationLibrary_8hnmh")
+}
+speed_scale = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitAnimator"]
+texture = ExtResource("2_siyw4")
+region_enabled = true
+region_rect = Rect2(896, 832, 64, 64)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lqnsr")
+volume_db = -10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ulc11")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
